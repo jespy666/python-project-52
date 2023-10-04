@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     {% load bootstrap4 %}
+    {% load i18n %}
+
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     {% bootstrap_css %}
