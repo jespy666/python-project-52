@@ -12,12 +12,18 @@
             </li>
         </ul>
         <ul class="navbar-nav">
+            {% if not user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">{% translate 'Sign In' %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'create' %}">{% translate 'Sign Up' %}</a>
             </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">{% translate 'Logout' %}</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

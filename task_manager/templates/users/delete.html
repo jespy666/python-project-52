@@ -4,8 +4,12 @@
 {% load i18n %}
 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    <input class="btn btn-primary" type="submit" value="{% translate 'Delete' %}">
-</form>
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4">{% translate 'User remove' %}</h1>
+    <p>{% translate 'Are you sure to remove' %} {{ user }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input class="btn btn-primary" type="submit" value="{% translate 'Delete' %}">
+    </form>
+</div>
 {% endblock %}
