@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 06:56+0000\n"
+"POT-Creation-Date: 2023-10-11 17:54+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,27 +19,81 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: task_manager/templates/index.html:7 task_manager/templates/index.html:15
+
+#: task_manager/templates/index.html:7 task_manager/templates/index.html:13
 #: task_manager/templates/navbar.html:4
 msgid "Task Manager"
 msgstr "Менеджер Задач"
 
-#: task_manager/templates/index.html:16
+#: task_manager/templates/index.html:14
 msgid "Try a simple task manager"
 msgstr "Попробуй простое веб-приложение менеджер задач"
 
-#: task_manager/templates/index.html:18
+#: task_manager/templates/index.html:16
 msgid "Get Started"
 msgstr "Попробовать"
 
-#: task_manager/templates/navbar.html:11
-msgid "Users"
-msgstr "Пользователи"
+#: task_manager/templates/login_form.html:7
+msgid "Login"
+msgstr "Войти"
 
-#: task_manager/templates/navbar.html:16
+#: task_manager/templates/login_form.html:12
+#: task_manager/templates/login_form.html:16
+#: task_manager/templates/navbar.html:17
 msgid "Sign In"
 msgstr "Войти"
 
-#: task_manager/templates/navbar.html:19
+#: task_manager/templates/navbar.html:11
+#: task_manager/templates/users/user_list.html:8
+msgid "Users"
+msgstr "Пользователи"
+
+#: task_manager/templates/navbar.html:20
+#: task_manager/templates/users/create.html:12
 msgid "Sign Up"
 msgstr "Регистрация"
+
+#: task_manager/templates/navbar.html:24
+msgid "Logout"
+msgstr "Выход"
+
+#: task_manager/templates/users/create.html:8
+#, fuzzy
+#| msgid "Sign Up"
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: task_manager/templates/users/delete.html:8
+msgid "User remove"
+msgstr "Удаление пользователя"
+
+#: task_manager/templates/users/delete.html:9
+msgid "Are you sure to remove"
+msgstr "Вы уверены, что хотите удалить"
+
+#: task_manager/templates/users/delete.html:12
+#: task_manager/templates/users/user_list.html:29
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/templates/users/user_list.html:12
+msgid "ID"
+msgstr ""
+
+#: task_manager/templates/users/user_list.html:13
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Пользователи"
+
+#: task_manager/templates/users/user_list.html:14
+msgid "Full name"
+msgstr "Полное имя"
+
+#: task_manager/templates/users/user_list.html:15
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: task_manager/templates/users/user_list.html:27
+msgid "Update"
+msgstr "Изменить"
