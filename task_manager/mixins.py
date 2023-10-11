@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.shortcuts import redirect
 
 
@@ -14,3 +14,12 @@ class UserPermissionMixin(UserPassesTestMixin):
     def handle_no_permission(self):
         messages.error(self.request, self.permission_message)
         return redirect(self.permission_url)
+
+
+class UserAuthRequiredMixin(LoginRequiredMixin):
+
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.is_authenticated:
+            messages.error(self.request, self.permission_denied_message)
+            return redirect(self.login_url)
+        return super().dispatch(request, *args, **kwargs)
