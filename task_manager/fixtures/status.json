@@ -1,0 +1,10 @@
+[
+  {
+    "model": "statuses.status",
+    "pk": 1,
+    "fields": {
+      "name": "Existed",
+      "creation_date": "2023-01-24T16:20:30.456Z"
+    }
+  }
+]
