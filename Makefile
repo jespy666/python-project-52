@@ -2,7 +2,7 @@ dev:
 	poetry run python3 manage.py runserver
 
 makemessages:
-	django-admin makemessages --ignore="static" --ignore=".env" -l ru
+	django-admin makemessages --ignore="static" -l ru
 
 compile:
 	django-admin compilemessages

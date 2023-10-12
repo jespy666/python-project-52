@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-11 17:54+0600\n"
+"POT-Creation-Date: 2023-10-12 18:47+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,81 +19,92 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-
-#: task_manager/templates/index.html:7 task_manager/templates/index.html:13
-#: task_manager/templates/navbar.html:4
+#: templates/index.html:7 templates/index.html:13 templates/navbar.html:4
 msgid "Task Manager"
-msgstr "Менеджер Задач"
+msgstr "Менеджер задач"
 
-#: task_manager/templates/index.html:14
+#: templates/index.html:14
 msgid "Try a simple task manager"
-msgstr "Попробуй простое веб-приложение менеджер задач"
+msgstr "Попробуй простое веб-прриложение Менеджер задач"
 
-#: task_manager/templates/index.html:16
+#: templates/index.html:16
 msgid "Get Started"
 msgstr "Попробовать"
 
-#: task_manager/templates/login_form.html:7
+#: templates/login_form.html:7
 msgid "Login"
-msgstr "Войти"
+msgstr "Вход"
 
-#: task_manager/templates/login_form.html:12
-#: task_manager/templates/login_form.html:16
-#: task_manager/templates/navbar.html:17
+#: templates/login_form.html:12 templates/login_form.html:16
+#: templates/navbar.html:17
 msgid "Sign In"
 msgstr "Войти"
 
-#: task_manager/templates/navbar.html:11
-#: task_manager/templates/users/user_list.html:8
+#: templates/navbar.html:11 templates/users/user_list.html:8
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/navbar.html:20
-#: task_manager/templates/users/create.html:12
+#: templates/navbar.html:20 templates/users/create.html:12
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: task_manager/templates/navbar.html:24
+#: templates/navbar.html:24 templates/statuses/status_list.html:8
+msgid "Statuses"
+msgstr "Статусы"
+
+#: templates/navbar.html:27
 msgid "Logout"
 msgstr "Выход"
 
-#: task_manager/templates/users/create.html:8
-#, fuzzy
-#| msgid "Sign Up"
-msgid "Sign up"
-msgstr "Регистрация"
+#: templates/statuses/create.html:8 templates/statuses/status_list.html:9
+msgid "Create status"
+msgstr "Создать статус"
 
-#: task_manager/templates/users/delete.html:8
-msgid "User remove"
-msgstr "Удаление пользователя"
+#: templates/statuses/create.html:12
+msgid "Create"
+msgstr "Создать"
 
-#: task_manager/templates/users/delete.html:9
+#: templates/statuses/delete.html:8
+msgid "Status remove"
+msgstr "Удалить статус"
+
+#: templates/statuses/delete.html:9 templates/users/delete.html:9
 msgid "Are you sure to remove"
 msgstr "Вы уверены, что хотите удалить"
 
-#: task_manager/templates/users/delete.html:12
-#: task_manager/templates/users/user_list.html:29
+#: templates/statuses/delete.html:12 templates/statuses/status_list.html:28
+#: templates/users/delete.html:12 templates/users/user_list.html:29
 msgid "Delete"
 msgstr "Удалить"
 
-#: task_manager/templates/users/user_list.html:12
+#: templates/statuses/status_list.html:13 templates/users/user_list.html:12
 msgid "ID"
 msgstr ""
 
-#: task_manager/templates/users/user_list.html:13
-#, fuzzy
-#| msgid "Users"
-msgid "Username"
-msgstr "Пользователи"
+#: templates/statuses/status_list.html:14
+msgid "Name"
+msgstr "Имя"
 
-#: task_manager/templates/users/user_list.html:14
-msgid "Full name"
-msgstr "Полное имя"
-
-#: task_manager/templates/users/user_list.html:15
+#: templates/statuses/status_list.html:15 templates/users/user_list.html:15
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: task_manager/templates/users/user_list.html:27
+#: templates/statuses/status_list.html:26 templates/users/user_list.html:27
 msgid "Update"
-msgstr "Изменить"
+msgstr "Обновить"
+
+#: templates/users/create.html:8
+msgid "Sign up"
+msgstr "Войти"
+
+#: templates/users/delete.html:8
+msgid "User remove"
+msgstr "Удаление пользователя"
+
+#: templates/users/user_list.html:13
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: templates/users/user_list.html:14
+msgid "Full name"
+msgstr "Полное имя"
