@@ -3,12 +3,14 @@
 <head>
     {% load bootstrap4 %}
     {% load i18n %}
-
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     {% bootstrap_css %}
+
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100  gradient-background">
     <header>
         {% include 'navbar.html' %}
     </header>

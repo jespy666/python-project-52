@@ -25,7 +25,7 @@ msgstr "Менеджер задач"
 
 #: templates/index.html:14
 msgid "Try a simple task manager"
-msgstr "Попробуй простое веб-прриложение Менеджер задач"
+msgstr "Попробуй простое веб-приложение Менеджер задач"
 
 #: templates/index.html:16
 msgid "Get Started"
