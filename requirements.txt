@@ -3,6 +3,7 @@ beautifulsoup4==4.12.2
 dj-database-url==2.1.0
 Django==4.2.5
 django-bootstrap4==23.2
+django-filter==23.3
 flake8==6.1.0
 gunicorn==21.2.0
 mccabe==0.7.0
