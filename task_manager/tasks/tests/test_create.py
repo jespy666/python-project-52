@@ -1,22 +1,22 @@
+from .test_setup import TaskTestCase
 from django.urls import reverse_lazy
-
-from .test_setup import StatusTestCase
-from ...json_loader import load_json
-from ..models import Status
+from task_manager.json_loader import load_json
+from ..models import Task
 
 
-class TestStatusCreate(StatusTestCase):
-    create_url = reverse_lazy('status_create')
-    created_cases = load_json('create_status.json')
+class TestTaskCreate(TaskTestCase):
+
+    create_url = reverse_lazy('task_create')
+    created_cases = load_json('create_task.json')
 
     def test_success_create(self):
         response = self.client.post(
-            self.create_url,
+            reverse_lazy('task_create'),
             data=self.created_cases['valid']
         )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, self.statuses_url)
-        self.assertEqual(Status.objects.count(), 2)
+        self.assertRedirects(response, self.tasks_url)
+        self.assertEqual(Task.objects.count(), 2)
 
     def test_success_create_with_flash(self):
         response = self.client.post(
@@ -32,17 +32,17 @@ class TestStatusCreate(StatusTestCase):
         self.assertEqual(message.tags, 'success')
         self.assertEqual(
             message.message,
-            'Status created successfully'
+            'Task created successfully'
         )
         self.assertTemplateUsed(
             response,
-            'statuses/status_list.html'
+            'tasks/task_list.html'
         )
 
     def test_create_unauthenticated(self):
         self.client.logout()
         response = self.client.post(
-            self.statuses_url,
+            self.tasks_url,
             data=self.created_cases['valid']
         )
         self.assertEqual(response.status_code, 302)
@@ -67,13 +67,13 @@ class TestStatusCreate(StatusTestCase):
         )
         self.assertTemplateUsed(response, 'login_form.html')
 
-    def test_create_with_empty_fields(self):
+    def test_create_with_empty_name(self):
         response = self.client.post(
             self.create_url,
             data=self.created_cases['empty_name']
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(Status.objects.count(), 1)
+        self.assertEqual(Task.objects.count(), 1)
 
     def test_create_with_exist_name(self):
         response = self.client.post(
@@ -81,4 +81,4 @@ class TestStatusCreate(StatusTestCase):
             data=self.created_cases['already_exists']
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(Status.objects.count(), 1)
+        self.assertEqual(Task.objects.count(), 1)

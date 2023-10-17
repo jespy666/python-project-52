@@ -1,0 +1,14 @@
+[
+  {
+    "model": "tasks.task",
+    "pk": 1,
+    "fields": {
+      "name": "Task",
+      "description": "Description of task",
+      "creation_date": "2023-01-24T16:20:30.456Z",
+      "author": 1,
+      "status": 1,
+      "task_performer": 1
+    }
+  }
+]
