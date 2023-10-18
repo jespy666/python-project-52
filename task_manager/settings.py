@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'task_manager.users',
     'task_manager.statuses',
     'task_manager.tasks',
+    'task_manager.labels',
     'bootstrap4',
     'django_filters',
 ]
@@ -128,12 +129,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-LANGUAGES = [
-    ('en', 'English'),
-    ('ru', 'Russian'),
-]
+if os.getenv('LANGUAGE'):
+    LANGUAGE_CODE = os.getenv('LANGUAGE')
+else:
+    LANGUAGE_CODE = 'ru'
 
 LOCALE_PATHS = [
     BASE_DIR / "task_manager" / "locale"
@@ -144,6 +143,11 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru', 'Russian'),
+)
 
 
 # Static files (CSS, JavaScript, Images)

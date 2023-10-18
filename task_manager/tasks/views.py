@@ -2,7 +2,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 from django_filters.views import FilterView
-from django.utils.translation import gettext_lazy as t
+from django.utils.translation import gettext as _
 
 from ..mixins import UserAuthRequiredMixin, TaskAuthorPermissionMixin
 from .models import Task
@@ -16,7 +16,7 @@ class TasksListView(UserAuthRequiredMixin, FilterView):
     filterset_class = TaskFilter
     context_object_name = 'tasks'
     login_url = 'login'
-    permission_denied_message = t('You must to be log in')
+    permission_denied_message = _('You must to be log in')
 
 
 class TaskView(UserAuthRequiredMixin, DetailView):
@@ -24,7 +24,7 @@ class TaskView(UserAuthRequiredMixin, DetailView):
     model = Task
     context_object_name = 'task'
     login_url = 'login'
-    permission_denied_message = t('You must to be log in')
+    permission_denied_message = _('You must to be log in')
 
 
 class TaskCreateView(UserAuthRequiredMixin, SuccessMessageMixin, CreateView):
@@ -33,8 +33,8 @@ class TaskCreateView(UserAuthRequiredMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('tasks')
     template_name = 'tasks/create.html'
     login_url = 'login'
-    success_message = t('Task created successfully')
-    permission_denied_message = t('You must to be log in')
+    success_message = _('Task created successfully')
+    permission_denied_message = _('You must to be log in')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -47,8 +47,8 @@ class TaskUpdateView(UserAuthRequiredMixin, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('tasks')
     template_name = 'tasks/create.html'
     login_url = 'login'
-    success_message = t('Task updated successfully')
-    permission_denied_message = t('You must to be log in')
+    success_message = _('Task updated successfully')
+    permission_denied_message = _('You must to be log in')
 
 
 class TaskDeleteView(UserAuthRequiredMixin, SuccessMessageMixin,
@@ -57,7 +57,7 @@ class TaskDeleteView(UserAuthRequiredMixin, SuccessMessageMixin,
     template_name = 'tasks/delete.html'
     login_url = 'login'
     success_url = reverse_lazy('tasks')
-    success_message = t('Task successfully removed')
-    permission_denied_message = t('You must to be log in')
+    success_message = _('Task successfully removed')
+    permission_denied_message = _('You must to be log in')
     author_url = reverse_lazy('tasks')
-    author_message = t('Only its author can delete a task')
+    author_message = _('Only its author can delete a task')

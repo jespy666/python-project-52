@@ -1,6 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.utils.translation import gettext_lazy as t
+from django.utils.translation import gettext as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Status
 from .forms import StatusCreateForm, StatusUpdateForm
@@ -12,9 +12,7 @@ class StatusListView(UserAuthRequiredMixin, ListView):
     model = Status
     context_object_name = 'statuses'
     login_url = 'login'
-    permission_denied_message = t(
-        'You must to be log in'
-    )
+    permission_denied_message = _('You must to be log in')
 
 
 class StatusCreateView(SuccessMessageMixin, UserAuthRequiredMixin, CreateView):
@@ -23,10 +21,8 @@ class StatusCreateView(SuccessMessageMixin, UserAuthRequiredMixin, CreateView):
     success_url = reverse_lazy('statuses')
     template_name = 'statuses/create.html'
     login_url = 'login'
-    success_message = t('Status created successfully')
-    permission_denied_message = t(
-        'You must to be log in'
-    )
+    success_message = _('Status created successfully')
+    permission_denied_message = _('You must to be log in')
 
 
 class StatusUpdateView(SuccessMessageMixin, UserAuthRequiredMixin, UpdateView):
@@ -35,10 +31,8 @@ class StatusUpdateView(SuccessMessageMixin, UserAuthRequiredMixin, UpdateView):
     success_url = reverse_lazy('statuses')
     template_name = 'statuses/create.html'
     login_url = 'login'
-    success_message = t('Status updated successfully')
-    permission_denied_message = t(
-        'You must to be log in'
-    )
+    success_message = _('Status updated successfully')
+    permission_denied_message = _('You must to be log in')
 
 
 class StatusDeleteView(SuccessMessageMixin, UserAuthRequiredMixin,
@@ -47,9 +41,7 @@ class StatusDeleteView(SuccessMessageMixin, UserAuthRequiredMixin,
     template_name = 'statuses/delete.html'
     login_url = 'login'
     success_url = reverse_lazy('statuses')
-    success_message = t('Status successfully removed')
-    permission_denied_message = t(
-        'You must to be log in'
-    )
+    success_message = _('Status successfully removed')
+    permission_denied_message = _('You must to be log in')
     protected_url = reverse_lazy('statuses')
-    protection_message = t('Cannot delete status because it is in use')
+    protection_message = _('Cannot delete status because it is in use')

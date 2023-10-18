@@ -1,13 +1,13 @@
 from django_filters import FilterSet, BooleanFilter
 from django.forms import CheckboxInput
-from django.utils.translation import gettext_lazy as t
+from django.utils.translation import gettext as _
 from .models import Task
 
 
 class TaskFilter(FilterSet):
 
     only_my_tasks = BooleanFilter(
-        label=t('Only my tasks'),
+        label=_('Only my tasks'),
         widget=CheckboxInput(attrs={'class': 'form-check-input'}),
         method='filter_my_tasks',
     )
@@ -22,4 +22,10 @@ class TaskFilter(FilterSet):
         fields = {
             'status': ['exact'],
             'task_performer': ['exact'],
+            'label': ['exact'],
+        }
+        field_labels = {
+            'status': _('Status'),
+            'task_performer': _('Task Performer'),
+            'label': _('Label'),
         }
