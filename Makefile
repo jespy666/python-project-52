@@ -21,3 +21,6 @@ test-coverage:
 
 lint:
 	poetry run flake8 task_manager
+
+install:
+	poetry install
