@@ -3,12 +3,39 @@
     "model": "tasks.task",
     "pk": 1,
     "fields": {
-      "name": "Task",
+      "name": "Existed",
       "description": "Description of task",
       "creation_date": "2023-01-24T16:20:30.456Z",
-      "author": 1,
+      "author": 2,
       "status": 1,
-      "task_performer": 1
+      "task_performer": 2,
+      "label": [1]
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 2,
+    "fields": {
+      "name": "Simply task",
+      "description": "Description of task2",
+      "creation_date": "2023-02-24T16:20:30.456Z",
+      "author": 3,
+      "status": 2,
+      "task_performer": 3,
+      "label": [2]
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 3,
+    "fields": {
+      "name": "Another task",
+      "description": "Description of task3",
+      "creation_date": "2023-03-24T16:20:30.456Z",
+      "author": 3,
+      "status": 2,
+      "task_performer": 3,
+      "label": []
     }
   }
 ]

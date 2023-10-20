@@ -6,5 +6,21 @@
       "name": "Existed",
       "creation_date": "2023-01-24T16:20:30.456Z"
     }
+  },
+  {
+    "model": "statuses.status",
+    "pk": 2,
+    "fields": {
+      "name": "normal",
+      "creation_date": "2023-01-24T16:20:30.456Z"
+    }
+  },
+  {
+    "model": "statuses.status",
+    "pk": 3,
+    "fields": {
+      "name": "open",
+      "creation_date": "2023-01-24T16:20:30.456Z"
+    }
   }
 ]

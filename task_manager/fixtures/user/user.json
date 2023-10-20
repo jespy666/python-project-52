@@ -18,5 +18,15 @@
       "last_name": "Molina",
       "password": "example123"
     }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "username": "Gus",
+      "first_name": "Gustavo",
+      "last_name": "Fring",
+      "password": "pollos14201998"
+    }
   }
 ]
