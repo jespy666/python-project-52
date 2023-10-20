@@ -27,7 +27,7 @@ class TaskManagerTestCase(TestCase):
 
     activate('en')
 
-    count = User.objects.count()
+    count = 3
 
     def setUp(self):
         self.user = User.objects.get(pk=1)
