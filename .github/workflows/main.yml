@@ -20,6 +20,9 @@ jobs:
         run: |
           pip install poetry
           make install
+      - name: Apply migrations
+        run: |
+          make migrate
       - name: Run linter
         run: make lint
       - name: Test & publish code coverage
