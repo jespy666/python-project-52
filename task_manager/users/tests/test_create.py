@@ -1,11 +1,13 @@
 from task_manager.json_loader import load_json
-from .test_setup import UserTestCase
+from task_manager.test_setup import TaskManagerTestCase
 from django.urls import reverse_lazy
 
+from task_manager.users.models import User
 
-class TestUserCreate(UserTestCase):
+
+class TestUserCreate(TaskManagerTestCase):
     create_url = reverse_lazy('create')
-    created_cases = load_json('create.json')
+    created_cases = load_json('user/create.json')
 
     def setUp(self):
         self.client.logout()
@@ -17,6 +19,7 @@ class TestUserCreate(UserTestCase):
         )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, self.login_url)
+        self.assertEqual(User.objects.count(), self.count + 1)
 
     def test_user_success_create_with_flash(self):
         response = self.client.post(
@@ -43,3 +46,4 @@ class TestUserCreate(UserTestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/create.html')
+        self.assertEqual(User.objects.count(), self.count)

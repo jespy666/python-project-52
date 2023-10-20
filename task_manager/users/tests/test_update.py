@@ -1,10 +1,11 @@
 from task_manager.json_loader import load_json
-from .test_setup import UserTestCase
 from django.urls import reverse_lazy
 
+from task_manager.test_setup import TaskManagerTestCase
 
-class TestUserUpdate(UserTestCase):
-    update_case = load_json('update.json')
+
+class TestUserUpdate(TaskManagerTestCase):
+    update_case = load_json('user/update.json')
 
     def test_user_update_view_authenticated(self):
         self.assertTrue(self.user.is_authenticated)

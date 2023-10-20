@@ -1,12 +1,12 @@
 from django.urls import reverse_lazy
 
-from .test_setup import TaskTestCase
-from ...json_loader import load_json
+from task_manager.test_setup import TaskManagerTestCase
+from task_manager.json_loader import load_json
 
 
-class TestTaskUpdate(TaskTestCase):
+class TestTaskUpdate(TaskManagerTestCase):
 
-    updated_cases = load_json('update_task.json')
+    updated_cases = load_json('task/update.json')
 
     def test_update_success(self):
         response = self.client.post(
@@ -48,7 +48,7 @@ class TestTaskUpdate(TaskTestCase):
     def test_update_unauthenticated(self):
         self.client.logout()
         response = self.client.post(
-            reverse_lazy('task_update', kwargs={'pk': 1}),
+            reverse_lazy('label_update', kwargs={'pk': 1}),
             data=self.updated_cases['valid']
         )
         self.assertEqual(response.status_code, 302)

@@ -1,7 +1,7 @@
-from .test_setup import StatusTestCase
+from task_manager.test_setup import TaskManagerTestCase
 
 
-class TestStatusView(StatusTestCase):
+class TestStatusView(TaskManagerTestCase):
 
     def test_view_unauthenticated(self):
         self.client.logout()

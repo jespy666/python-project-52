@@ -1,8 +1,8 @@
-from .test_setup import TaskTestCase
+from task_manager.test_setup import TaskManagerTestCase
 from django.urls import reverse_lazy
 
 
-class TestTaskShow(TaskTestCase):
+class TestTaskShow(TaskManagerTestCase):
 
     def test_success_show(self):
         response = self.client.get(
@@ -11,7 +11,7 @@ class TestTaskShow(TaskTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'tasks/show.html')
 
-    def test_view_unauthenticated(self):
+    def test_show_unauthenticated(self):
         self.client.logout()
         response = self.client.get(
             reverse_lazy('task_show', kwargs={'pk': 1})

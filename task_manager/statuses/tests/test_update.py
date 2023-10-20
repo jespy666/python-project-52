@@ -1,11 +1,12 @@
 from django.urls import reverse_lazy
 
-from .test_setup import StatusTestCase
-from ...json_loader import load_json
+from task_manager.test_setup import TaskManagerTestCase
+from task_manager.json_loader import load_json
 
 
-class TestStatusUpdate(StatusTestCase):
-    updated_cases = load_json('update_status.json')
+class TestStatusUpdate(TaskManagerTestCase):
+
+    updated_cases = load_json('status/update.json')
 
     def test_update_success(self):
         response = self.client.post(

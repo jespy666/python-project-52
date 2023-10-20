@@ -1,13 +1,14 @@
 from django.urls import reverse_lazy
 
-from .test_setup import StatusTestCase
+from task_manager.test_setup import TaskManagerTestCase
 from ...json_loader import load_json
 from ..models import Status
 
 
-class TestStatusCreate(StatusTestCase):
+class TestStatusCreate(TaskManagerTestCase):
+
     create_url = reverse_lazy('status_create')
-    created_cases = load_json('create_status.json')
+    created_cases = load_json('status/create.json')
 
     def test_success_create(self):
         response = self.client.post(
@@ -16,7 +17,7 @@ class TestStatusCreate(StatusTestCase):
         )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, self.statuses_url)
-        self.assertEqual(Status.objects.count(), 2)
+        self.assertEqual(Status.objects.count(), self.count + 1)
 
     def test_success_create_with_flash(self):
         response = self.client.post(
@@ -47,6 +48,7 @@ class TestStatusCreate(StatusTestCase):
         )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, self.login_url)
+        self.assertEqual(Status.objects.count(), self.count)
 
     def test_create_unauthenticated_with_flash(self):
         self.client.logout()
@@ -73,7 +75,7 @@ class TestStatusCreate(StatusTestCase):
             data=self.created_cases['empty_name']
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(Status.objects.count(), 1)
+        self.assertEqual(Status.objects.count(), self.count)
 
     def test_create_with_exist_name(self):
         response = self.client.post(
@@ -81,4 +83,4 @@ class TestStatusCreate(StatusTestCase):
             data=self.created_cases['already_exists']
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(Status.objects.count(), 1)
+        self.assertEqual(Status.objects.count(), self.count)
