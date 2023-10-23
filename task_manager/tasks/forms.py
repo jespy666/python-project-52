@@ -22,7 +22,7 @@ class TaskCreateForm(ModelForm):
             'description',
             'status',
             'task_performer',
-            'label'
+            'labels'
         )
 
 
@@ -42,7 +42,7 @@ class TaskUpdateForm(ModelForm):
             'description',
             'status',
             'task_performer',
-            'label',
+            'labels',
         )
 
     def clean_name(self):

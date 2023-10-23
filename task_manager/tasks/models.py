@@ -44,12 +44,12 @@ class Task(models.Model):
         verbose_name=_('task_performer')
     )
 
-    label = models.ManyToManyField(
+    labels = models.ManyToManyField(
         Label,
         through='TaskLabel',
         through_fields=('task', 'label'),
         blank=True,
-        related_name='label',
+        related_name='labels',
         verbose_name=_('Labels')
     )
 
