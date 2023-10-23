@@ -50,7 +50,7 @@ class Task(models.Model):
         through_fields=('task', 'label'),
         blank=True,
         related_name='label',
-        verbose_name=_('label')
+        verbose_name=_('Labels')
     )
 
     def __str__(self):

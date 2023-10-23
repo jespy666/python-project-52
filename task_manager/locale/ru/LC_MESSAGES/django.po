@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-23 17:15+0600\n"
+"POT-Creation-Date: 2023-10-23 19:57+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,16 @@ msgstr ""
 #: task_manager/templates/tasks/task_list.html:22
 msgid "Name"
 msgstr "Имя"
+
+#: task_manager/labels/models.py:22 task_manager/tasks/filters.py:18
+msgid "Label"
+msgstr "Метка"
+
+#: task_manager/labels/models.py:23 task_manager/tasks/models.py:53
+#: task_manager/templates/labels/label_list.html:8
+#: task_manager/templates/navbar.html:27
+msgid "Labels"
+msgstr "Метки"
 
 #: task_manager/labels/views.py:18 task_manager/labels/views.py:30
 #: task_manager/labels/views.py:47 task_manager/labels/views.py:65
@@ -105,23 +115,19 @@ msgstr "Статус успешно удален"
 msgid "Cannot delete status because it is in use"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: task_manager/tasks/filters.py:10
+#: task_manager/tasks/filters.py:11
 msgid "Only my tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/tasks/filters.py:28 task_manager/templates/tasks/show.html:25
+#: task_manager/tasks/filters.py:33 task_manager/templates/tasks/show.html:25
 #: task_manager/templates/tasks/task_list.html:23
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/tasks/filters.py:29
+#: task_manager/tasks/filters.py:34
 #: task_manager/templates/tasks/task_list.html:25
 msgid "Task Performer"
 msgstr "Исполнитель"
-
-#: task_manager/tasks/filters.py:30
-msgid "Label"
-msgstr "Метка"
 
 #: task_manager/tasks/models.py:19
 msgid "description"
@@ -138,10 +144,6 @@ msgstr "Статус"
 #: task_manager/tasks/models.py:44
 msgid "task_performer"
 msgstr "Исполнитель"
-
-#: task_manager/tasks/models.py:53
-msgid "label"
-msgstr "Метка"
 
 #: task_manager/tasks/views.py:40
 msgid "Task created successfully"
@@ -197,11 +199,6 @@ msgstr "Вы уверены, что хотите удалить"
 #: task_manager/templates/users/delete.html:12
 msgid "Yes, delete"
 msgstr "Да, удалить"
-
-#: task_manager/templates/labels/label_list.html:8
-#: task_manager/templates/navbar.html:27
-msgid "Labels"
-msgstr "Метки"
 
 #: task_manager/templates/labels/label_list.html:13
 #: task_manager/templates/statuses/status_list.html:13
@@ -344,6 +341,9 @@ msgstr "Войти"
 #: task_manager/views.py:25
 msgid "You are logout"
 msgstr "Вы разлогинены"
+
+#~ msgid "labels"
+#~ msgstr "Метки"
 
 #, fuzzy
 #~| msgid "Username"

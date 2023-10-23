@@ -1,10 +1,16 @@
-from django_filters import FilterSet, BooleanFilter
+from django_filters import FilterSet, BooleanFilter, ModelChoiceFilter
 from django.forms import CheckboxInput
 from django.utils.translation import gettext as _
 from .models import Task
+from task_manager.labels.models import Label
 
 
 class TaskFilter(FilterSet):
+
+    labels = ModelChoiceFilter(
+        queryset=Label.objects.all(),
+        label=_('Label')
+    )
 
     only_my_tasks = BooleanFilter(
         label=_('Only my tasks'),
@@ -22,10 +28,8 @@ class TaskFilter(FilterSet):
         fields = {
             'status': ['exact'],
             'task_performer': ['exact'],
-            'label': ['exact'],
         }
         field_labels = {
             'status': _('Status'),
             'task_performer': _('Task Performer'),
-            'label': _('Label'),
         }
