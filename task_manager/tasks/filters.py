@@ -14,7 +14,7 @@ class TaskFilter(FilterSet):
 
     def filter_my_tasks(self, queryset, name, value):
         if value:
-            return queryset.filter(task_performer=self.request.user)
+            return queryset.filter(author=self.request.user)
         return queryset
 
     class Meta:
