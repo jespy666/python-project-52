@@ -255,7 +255,7 @@ msgstr "Задачи"
 
 #: task_manager/templates/navbar.html:33
 msgid "Logout"
-msgstr "Выйти"
+msgstr "Выход"
 
 #: task_manager/templates/statuses/delete.html:8
 msgid "Status remove"
