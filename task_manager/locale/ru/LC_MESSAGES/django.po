@@ -201,7 +201,7 @@ msgstr "Да, удалить"
 #: task_manager/templates/labels/label_list.html:8
 #: task_manager/templates/navbar.html:27
 msgid "Labels"
-msgstr "Метки"
+msgstr "Метка"
 
 #: task_manager/templates/labels/label_list.html:13
 #: task_manager/templates/statuses/status_list.html:13
