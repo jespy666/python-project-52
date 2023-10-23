@@ -67,7 +67,7 @@ class TestTaskCreate(TaskManagerTestCase):
             message.message,
             'You must to be log in'
         )
-        self.assertTemplateUsed(response, 'login_form.html')
+        self.assertTemplateUsed(response, 'form.html')
 
     def test_create_with_empty_name(self):
         response = self.client.post(

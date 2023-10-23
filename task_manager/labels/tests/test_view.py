@@ -30,4 +30,4 @@ class TestLabelView(TaskManagerTestCase):
             message.message,
             'You must to be log in'
         )
-        self.assertTemplateUsed(response, 'login_form.html')
+        self.assertTemplateUsed(response, 'form.html')

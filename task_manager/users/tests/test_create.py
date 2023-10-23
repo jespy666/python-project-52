@@ -37,7 +37,7 @@ class TestUserCreate(TaskManagerTestCase):
             message.message,
             'User created successfully'
         )
-        self.assertTemplateUsed(response, 'login_form.html')
+        self.assertTemplateUsed(response, 'form.html')
 
     def test_user_create_with_existed_username(self):
         response = self.client.post(
@@ -45,5 +45,5 @@ class TestUserCreate(TaskManagerTestCase):
             data=self.created_cases['existed_username'],
         )
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'users/create.html')
+        self.assertTemplateUsed(response, 'form.html')
         self.assertEqual(User.objects.count(), self.count)

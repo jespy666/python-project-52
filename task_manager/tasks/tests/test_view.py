@@ -22,7 +22,7 @@ class TestStatusView(TaskManagerTestCase):
             message.message,
             'You must to be log in'
         )
-        self.assertTemplateUsed(response, 'login_form.html')
+        self.assertTemplateUsed(response, 'form.html')
 
     def test_success_view(self):
         response = self.client.get(self.tasks_url)

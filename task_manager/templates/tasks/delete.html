@@ -9,7 +9,7 @@
     <p>{% translate 'Are you sure to remove' %} {{ task.name }}?</p>
     <form method="post">
         {% csrf_token %}
-        <input class="btn btn-primary" type="submit" value="{% translate 'Delete' %}">
+        <input class="btn btn-danger" type="submit" value="{% translate 'Yes, delete' %}">
     </form>
 </div>
 {% endblock %}
