@@ -17,20 +17,20 @@ class TestTaskFilter(TaskManagerTestCase):
         self.assertContains(response, self.task.name)
         self.assertNotContains(response, self.task2.name)
 
-    def test_filter_by_performer(self):
+    def test_filter_by_executor(self):
         response = self.client.get(
             self.tasks_url,
-            {'task_performer': self.bounded_user.pk}
+            {'executor': self.bounded_user.pk}
         )
-        self.assertEqual(response.context['tasks'].count(), self.count)
+        self.assertEqual(response.context['tasks'].count(), self.count - 2)
         self.assertContains(response, self.task.name)
-        # self.assertNotContains(response, self.task2.name)
+        self.assertNotContains(response, self.task2.name)
 
     def test_filter_by_label(self):
         response = self.client.get(
             self.tasks_url,
-            {'label': self.label.pk}
+            {'labels': self.label.pk}
         )
-        self.assertEqual(response.context['tasks'].count(), self.count)
+        self.assertEqual(response.context['tasks'].count(), self.count - 2)
         self.assertContains(response, self.task.name)
-        # self.assertNotContains(response, self.task2.name)
+        self.assertNotContains(response, self.task2.name)
