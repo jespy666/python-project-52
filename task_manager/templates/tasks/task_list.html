@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">{% translate 'Tasks' %}</h1>
-    <a class="nav-link" href="{% url 'task_create' %}">{% trans 'Create task' %}</a>
+    <a class="btn btn-primary mb-3" href="{% url 'task_create' %}">{% trans 'Create task' %}</a>
     <div class="card mb-3">
         <div class="card-body bg-light">
             <form method="get">
@@ -22,7 +22,7 @@
             <th>{% translate 'Name' %}</th>
             <th>{% translate 'Status' %}</th>
             <th>{% translate 'Author' %}</th>
-            <th>{% translate 'Task Performer' %}</th>
+            <th>{% translate 'Executor' %}</th>
             <th>{% translate 'Creation date' %}</th>
             <th></th>
           </tr>
@@ -36,7 +36,7 @@
             </td>
             <td>{{ task.status }}</td>
             <td>{{ task.author }}</td>
-            <td>{{ task.task_performer }}</td>
+            <td>{{ task.executor }}</td>
             <td>{{ task.creation_date|date:"d.m.Y H:i" }}</td>
             <td>
               <a href="{% url 'task_update' pk=task.pk %}">{% translate 'Update' %}</a>
