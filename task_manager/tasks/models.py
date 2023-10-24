@@ -37,11 +37,11 @@ class Task(models.Model):
         verbose_name=_('status')
     )
 
-    task_performer = models.ForeignKey(
+    executor = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
-        related_name='task_performer',
-        verbose_name=_('task_performer')
+        related_name='executor',
+        verbose_name=_('Executor')
     )
 
     labels = models.ManyToManyField(

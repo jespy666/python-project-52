@@ -27,9 +27,9 @@ class TaskFilter(FilterSet):
         model = Task
         fields = {
             'status': ['exact'],
-            'task_performer': ['exact'],
+            'executor': ['exact'],
         }
         field_labels = {
             'status': _('Status'),
-            'task_performer': _('Task Performer'),
+            'executor': _('Executor'),
         }

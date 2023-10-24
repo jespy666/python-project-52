@@ -21,7 +21,7 @@ class TaskCreateForm(ModelForm):
             'name',
             'description',
             'status',
-            'task_performer',
+            'executor',
             'labels'
         )
 
@@ -41,7 +41,7 @@ class TaskUpdateForm(ModelForm):
             'name',
             'description',
             'status',
-            'task_performer',
+            'executor',
             'labels',
         )
 
