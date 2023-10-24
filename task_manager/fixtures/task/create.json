@@ -4,20 +4,20 @@
       "description": "valid description",
       "author": 1,
       "status": 1,
-      "task_performer": 1
+      "executor": 1
     },
     "empty_name": {
       "name": "",
       "description": "valid description",
       "author": 1,
       "status": 1,
-      "task_performer": 1
+      "executor": 1
     },
     "already_exists": {
       "name": "Existed",
       "description": "valid description",
       "author": 1,
       "status": 1,
-      "task_performer": 1
+      "executor": 1
     }
 }
